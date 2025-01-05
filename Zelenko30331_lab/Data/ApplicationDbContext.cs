@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Zelenko30331_lab.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)

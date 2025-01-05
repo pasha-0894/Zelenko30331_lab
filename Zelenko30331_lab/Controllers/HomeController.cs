@@ -1,32 +1,29 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Zelenko30331_lab.ViewModels;
 using Zelenko30331_lab.Models;
 
 namespace Zelenko30331_lab.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
         public IActionResult Index()
         {
-            return View();
-        }
+            ViewData["LabTitle"] = "Ћабораторна€ работа 2";
+            var items = new List<ListDemo>
+    {
+        new ListDemo { Id = 1, Name = "Ёлемент 1" },
+        new ListDemo { Id = 2, Name = "Ёлемент 2" },
+        new ListDemo { Id = 3, Name = "Ёлемент 3" }
+    };
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+            var selectList = new SelectList(items, "Id", "Name");
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            var model = new ListDemoViewModel
+            {
+                Items = selectList
+            };
+            return View(model);
         }
     }
 }

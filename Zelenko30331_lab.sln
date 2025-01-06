@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zelenko30331_lab", "Zelenko30331_lab\Zelenko30331_lab.csproj", "{75D23A76-0129-40FF-AECA-02B6C44C4C4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zelenko30331_lab", "Zelenko30331_lab\Zelenko30331_lab.csproj", "{75D23A76-0129-40FF-AECA-02B6C44C4C4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zelenko30331_lab.Domain", "Zelenko30331_lab.Domain\Zelenko30331_lab.Domain.csproj", "{0A0811C2-B2C2-46D4-A020-FC7707BBB10F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{75D23A76-0129-40FF-AECA-02B6C44C4C4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75D23A76-0129-40FF-AECA-02B6C44C4C4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75D23A76-0129-40FF-AECA-02B6C44C4C4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A0811C2-B2C2-46D4-A020-FC7707BBB10F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A0811C2-B2C2-46D4-A020-FC7707BBB10F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A0811C2-B2C2-46D4-A020-FC7707BBB10F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A0811C2-B2C2-46D4-A020-FC7707BBB10F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

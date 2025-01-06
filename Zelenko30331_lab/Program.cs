@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using Zelenko30331_lab.Data;
+using Zelenko30331_lab.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,13 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 options.UseSqlite(connectionString)); builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+//MemoryCategoryService
+builder.Services.AddScoped<ICategoryService, MemoryCategoryService>();
+//MemoryAssetService
+builder.Services.AddScoped<IProductService, MemoryProductService>();
+//RazorPages
+builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
 {

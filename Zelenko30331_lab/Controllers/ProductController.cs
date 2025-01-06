@@ -23,8 +23,7 @@ namespace Zelenko30331_lab.Controllers
             if (currentCategory == null) currentCategory = "Все";
             ViewData["currentCategory"] = currentCategory;
             var productResponse =
-            await
-            productService.GetProductListAsync(category, pageNo);
+            await productService.GetProductListAsync(category, pageNo);
             if (!productResponse.Success)
                 ViewData["Error"] = productResponse.ErrorMessage;
             return View(productResponse.Data);

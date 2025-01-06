@@ -66,8 +66,19 @@ namespace Zelenko30331_lab.Services
             var data = _dishes
             .Where(d => categoryId == null || d.Id.Equals(categoryId))?
             .ToList();
-            // поместить ранные в объект результата
-            result.Data = new AssetListModel<Dish>() { Items = data };
+            // получить размер страницы из конфигурации
+            int pageSize = _config.GetSection("ItemsPerPage").Get<int>();
+            // получить общее количество страниц
+            int totalPages = (int)Math.Ceiling(data.Count / (double)pageSize);
+            // получить данные страницы
+            var listData = new AssetListModel<Dish>()
+            {
+                Items = data.Skip((pageNo - 1) * pageSize).Take(pageSize).ToList(),
+                CurrentPage = pageNo,
+                TotalPages = totalPages
+            };
+            // поместить данные в объект результата
+            result.Data = listData;
             // Если список пустой
             if (data.Count == 0)
             {

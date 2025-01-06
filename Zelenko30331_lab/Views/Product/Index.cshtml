@@ -7,8 +7,8 @@
     var categories = ViewData["categories"] as
         IEnumerable<Category>;
     string? category = request.Query["category"].ToString();
-  //  int prev = Model.CurrentPage == 1 ? 1 : Model.CurrentPage - 1;
-  //  int next = Model.CurrentPage == Model.TotalPages ? Model.TotalPages : Model.CurrentPage + 1;
+   int prev = Model.CurrentPage == 1 ? 1 : Model.CurrentPage - 1;
+    int next = Model.CurrentPage == Model.TotalPages ? Model.TotalPages : Model.CurrentPage + 1;
 }
 
 <h1>Index</h1>
@@ -53,11 +53,17 @@
 </div>
 @if (Model != null)
 {
-    <div class="card-group">
+        <div class="card-group">
         @foreach (var item in Model.Items)
         {
-            <partial name="_DishItemPartial" model="@item" />
+                            <partial name="_DishItemPartial" model="@item" />
         }
-    </div>
+        </div>
 }
+<!-- Pager -->
+<pager current-page="@Model.CurrentPage"
+       total-pages="@Model.TotalPages"
+       category="@category"></pager>
+<!-- Pager -->
+<h2 class="text-warning">@ViewData["Error"]</h2>
 

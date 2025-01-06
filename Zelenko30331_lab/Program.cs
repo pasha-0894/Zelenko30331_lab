@@ -4,6 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using Zelenko30331_lab.Data;
 using Zelenko30331_lab.Services;
+using Microsoft.AspNetCore.Razor.TagHelpers;
+using Zelenko30331_lab.TagHelpers;
+using Zelenko30331_lab.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 

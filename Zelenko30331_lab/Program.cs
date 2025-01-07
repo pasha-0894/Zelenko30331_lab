@@ -39,6 +39,10 @@ builder.Services.AddAuthorization(opt =>
     p.RequireClaim(ClaimTypes.Role, "admin"));
 });
 builder.Services.AddSingleton<IEmailSender, NoOpEmailSender>();
+
+builder.Services.AddHttpClient<ICategoryService, ApiCategoryService>(opt => opt.BaseAddress = new Uri("https://localhost:7002/api/categories"));
+builder.Services.AddHttpClient<IProductService, ApiProductService>(opt => opt.BaseAddress = new Uri("https://localhost:7002/api/dishes"));
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

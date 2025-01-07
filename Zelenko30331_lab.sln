@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zelenko30331_lab", "Zelenko
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zelenko30331_lab.Domain", "Zelenko30331_lab.Domain\Zelenko30331_lab.Domain.csproj", "{0A0811C2-B2C2-46D4-A020-FC7707BBB10F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zelenko30331_lab.API", "Zelenko30331_lab.API\Zelenko30331_lab.API.csproj", "{2F81A5B4-C53D-4BF5-AD15-6BD3249CC538}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0A0811C2-B2C2-46D4-A020-FC7707BBB10F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A0811C2-B2C2-46D4-A020-FC7707BBB10F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A0811C2-B2C2-46D4-A020-FC7707BBB10F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F81A5B4-C53D-4BF5-AD15-6BD3249CC538}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F81A5B4-C53D-4BF5-AD15-6BD3249CC538}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F81A5B4-C53D-4BF5-AD15-6BD3249CC538}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F81A5B4-C53D-4BF5-AD15-6BD3249CC538}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

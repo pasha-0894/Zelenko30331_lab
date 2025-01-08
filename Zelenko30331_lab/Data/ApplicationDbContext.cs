@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Zelenko30331_lab.Domain.Entities;
 
 namespace Zelenko30331_lab.Data
 {
@@ -9,5 +10,6 @@ namespace Zelenko30331_lab.Data
             : base(options)
         {
         }
+        public DbSet<Zelenko30331_lab.Domain.Entities.Dish> Dish { get; set; } = default!;
     }
 }

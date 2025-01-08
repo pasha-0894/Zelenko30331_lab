@@ -88,10 +88,10 @@ namespace Zelenko30331_lab.Services
             // Вернуть результат
             return Task.FromResult(result);
         }
+        public Task<ResponseData<Dish>> CreateProductAsync(Dish product, IFormFile? formFile)
+        {
+            throw new NotImplementedException();
+        }
     }
-
-      // public Task<ResponseData<Dish>> CreateAssetAsync(Dish product, IFormFile? formFile)
-       // {
-      //      throw new NotImplementedException();
-      //  }
+     
 }

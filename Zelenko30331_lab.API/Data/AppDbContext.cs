@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Zelenko30331_lab.Domain.Entities;
+using Zelenko30331_lab.API.Data;
 
 namespace Zelenko30331_lab.API.Data
 {

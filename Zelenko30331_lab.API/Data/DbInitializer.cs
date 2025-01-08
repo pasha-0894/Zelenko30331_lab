@@ -27,7 +27,7 @@ namespace Zelenko30331_lab.API.Data
                 var dishes = new List<Dish>
                 {
                      new Dish {Id = 1, Name="Фольксваген Пассат",
-                    Description="Немного б.у. фольксваген", CtegoryId=45882,
+                    Description="Немного б.у. фольксваген1111", CtegoryId=45882,
                     Price =15000, Photo="images/1.png",
                     Category=categories.FirstOrDefault(c=>c.NormalizedName.Equals("Volkswagen"))},
                     new Dish {Id = 2, Name="Фольксваген Поло",

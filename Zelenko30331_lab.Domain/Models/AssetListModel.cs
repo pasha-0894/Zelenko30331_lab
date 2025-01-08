@@ -16,9 +16,9 @@ namespace Zelenko30331_lab.Domain.Models
         // общее количество страниц
         public int TotalPages { get; set; } = 1;
 
-        public static implicit operator AssetListModel<T>(List<Dish> v)
-        {
-            throw new NotImplementedException();
-        }
+      //  public static implicit operator AssetListModel<T>(List<Dish> v)
+      //  {
+      //    throw new NotImplementedException();
+   //    }
     }
 }

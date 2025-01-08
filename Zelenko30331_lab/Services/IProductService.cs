@@ -1,4 +1,5 @@
-﻿using Zelenko30331_lab.Domain.Entities;
+﻿using NuGet.ContentModel;
+using Zelenko30331_lab.Domain.Entities;
 using Zelenko30331_lab.Domain.Models;
 
 namespace Zelenko30331_lab.Services
@@ -10,7 +11,9 @@ namespace Zelenko30331_lab.Services
         /// </summary>
         /// <param name="categoryNormalizedName">нормализованное имя категории для фильтрации</param>
         /// <param name="pageNo">номер страницы списка</param>
-        /// <returns></returns>
+        /// <returns></returns>    
+        public Task<ResponseData<Dish>> CreateProductAsync(Dish product, IFormFile? formFile);
+
         public Task<ResponseData<AssetListModel<Dish>>> GetProductListAsync(string? categoryNormalizedName, int pageNo = 1);
         /// <summary>
         /// Поиск объекта по Id

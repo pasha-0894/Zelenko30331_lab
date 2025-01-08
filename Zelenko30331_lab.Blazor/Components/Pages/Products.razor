@@ -1,0 +1,28 @@
+﻿@using Zelenko30331_lab.Blazor.Components;
+@using Zelenko30331_lab.Domain.Entities;
+@using Zelenko30331_lab.Blazor.Servises;
+
+
+@page "/products"
+@rendermode InteractiveServer
+<h3>Products</h3>
+<CascadingValue Value="ProductService">
+    <ProductList ProductSelected="ShowDetails" />
+    <Pager />
+</CascadingValue>
+<ProductDetails Dish="SelectedProduct" />
+
+@code {
+	[Inject] IProductService<Dish> ProductService { get; set; }
+    [Parameter]
+    public Dish SelectedProduct { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await ProductService.GetProducts();
+    }
+    void ShowDetails(int id)
+    {
+        SelectedProduct = ProductService.Products.First(d => d.Id == id);
+    }
+}

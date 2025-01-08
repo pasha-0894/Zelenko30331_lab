@@ -1,0 +1,31 @@
+﻿@using Zelenko30331_lab.Blazor.Components;
+@using Zelenko30331_lab.Domain.Entities;
+@using Zelenko30331_lab.Blazor.Servises;
+
+
+@if (Dish != null)
+{
+        <div class="card mt-5" style="width: 18rem;">
+                <img src="@Dish.Photo" class="card-img-top" alt="...">
+            <div class="card-body">
+                    <h5 class="card-title">@Dish.Name</h5>
+                    <p class="card-text">@Dish.Description</p>
+                <h5>
+                    <span class="badge bg-secondary">
+                            Инвентарный номер: @Dish.CtegoryId
+                    </span>
+                </h5>
+                <h5>
+                    <span class="badge bg-secondary">
+                            Стоимость: @Dish.Price
+                    </span>
+                </h5>
+            </div>
+        </div>
+}
+@code {
+    [Parameter]
+    public Dish Dish { get; set; }
+    [Parameter]
+    public EventCallback<Dish> DishChanged { get; set; }
+}

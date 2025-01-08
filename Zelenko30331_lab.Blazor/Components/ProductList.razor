@@ -1,0 +1,54 @@
+﻿@using Zelenko30331_lab.Blazor.Components;
+@using Zelenko30331_lab.Domain.Entities;
+@using Zelenko30331_lab.Blazor.Servises;
+
+@implements IDisposable
+@rendermode InteractiveServer
+<h3>ProductList</h3>
+@if (ProductService.Products != null && ProductService.Products.Count() != 0)
+{
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Название</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+            @foreach (var item in ProductService.Products)
+            {
+                                <tr>
+                                    <td>@item.Name</td>
+                                    <td>
+                                                <button class="btn btn-outline-dark" @onclick="@(()=>OnProductSelected(item.Id))">
+                                            Подробно
+                                        </button>
+                                    </td>
+                                </tr>
+            }
+                </tbody>
+            </table>
+}
+@code {
+    [CascadingParameter]
+    public IProductService<Dish> ProductService { get; set; }
+    // public Asset SelectedAsset { get; set; }
+    [Parameter]
+    public EventCallback<int> ProductSelected { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        ProductService.ListChanged += StateHasChanged;
+        //await AssetService.GetAssets();
+    }
+
+    public async void OnProductSelected(int id)
+    {
+        await ProductSelected.InvokeAsync(id);
+    }
+
+    public void Dispose()
+    {
+        ProductService.ListChanged -= StateHasChanged;
+    }
+}
